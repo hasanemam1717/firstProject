@@ -10,14 +10,22 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-//applicationRoutes
+// application routes
 app.use('/api/v1', router);
+
+const test = async (req: Request, res: Response) => {
+  const a = 10;
+  res.send(a);
+};
+
+app.get('/', test);
 // not found
 app.use(notFound);
 app.use(globalErrorHandler)
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
+
 
 
 
