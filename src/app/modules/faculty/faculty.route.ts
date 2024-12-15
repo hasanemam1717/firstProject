@@ -24,3 +24,7 @@ router.get(
 );
 
 export const FacultyRoutes = router;
+
+
+
+
