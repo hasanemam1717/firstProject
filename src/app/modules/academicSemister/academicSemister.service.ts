@@ -1,4 +1,4 @@
-import { TAcademicSemester } from "./academicSemister";
+import { TAcademicSemester } from "./academicSemister.interface";
 import { academicSemesterNameCodeMapper } from "./academicSemister.constant";
 import { AcademicSemester } from "./academicSemister.model";
 

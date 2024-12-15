@@ -1,9 +1,11 @@
 import { Router } from 'express';
-import { UserRoutes } from '../modules/user/user.route';
-import { StudentRoutes } from '../modules/student/student.route';
-import { AcademicSemesterRoutes } from '../modules/academicSemister/academicSemister.route';
-import { AcademicFacultyRoutes } from '../modules/academicFaculty/academicFaculty.route';
 import { AcademicDepartmentRoutes } from '../modules/academicDepartment/academicDepartment.route';
+import { AcademicFacultyRoutes } from '../modules/academicFaculty/academicFaculty.route';
+import { StudentRoutes } from '../modules/student/student.route';
+import { UserRoutes } from '../modules/user/user.route';
+import { FacultyRoutes } from '../modules/faculty/faculty.route';
+import { AcademicSemesterRoutes } from '../modules/academicSemister/academicSemister.route';
+import { CourseRoutes } from '../modules/course/course.route';
 
 const router = Router();
 
@@ -17,6 +19,14 @@ const moduleRoutes = [
         route: StudentRoutes,
     },
     {
+        path: '/faculties',
+        route: FacultyRoutes,
+    },
+    //   {
+    //     path: '/admins',
+    //     route: AdminRoutes,
+    //   },
+    {
         path: '/academic-semesters',
         route: AcademicSemesterRoutes,
     },
@@ -27,6 +37,10 @@ const moduleRoutes = [
     {
         path: '/academic-departments',
         route: AcademicDepartmentRoutes,
+    },
+    {
+        path: '/courses',
+        route: CourseRoutes,
     },
 ];
 

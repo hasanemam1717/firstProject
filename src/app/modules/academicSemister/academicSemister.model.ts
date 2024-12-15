@@ -1,9 +1,9 @@
 import { model, Schema } from "mongoose";
-import { TAcademicSemester } from "./academicSemister";
 import { AcademicSemesterCode, AcademicSemesterName, Months } from "./academicSemister.constant";
+import { TAcademicSemester } from "./academicSemister.interface";
 
 
-const academicSemesterSchema = new Schema<TAcademicSemester>(
+const acdemicSemesterSchema = new Schema<TAcademicSemester>(
     {
         name: {
             type: String,
@@ -35,7 +35,7 @@ const academicSemesterSchema = new Schema<TAcademicSemester>(
     },
 );
 
-academicSemesterSchema.pre('save', async function (next) {
+acdemicSemesterSchema.pre('save', async function (next) {
     const isSemesterExists = await AcademicSemester.findOne({
         year: this.year,
         name: this.name,
@@ -49,7 +49,7 @@ academicSemesterSchema.pre('save', async function (next) {
 
 export const AcademicSemester = model<TAcademicSemester>(
     'AcademicSemester',
-    academicSemesterSchema,
+    acdemicSemesterSchema,
 );
 
 // Name Year
@@ -57,8 +57,6 @@ export const AcademicSemester = model<TAcademicSemester>(
 // 2031 Autumn
 //2030 Autumn => XXX
 //2030 Fall => Created
-
-
 
 // Autumn 01
 // Summar 02
